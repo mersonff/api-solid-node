@@ -12,7 +12,7 @@ describe('Check-In Metrics (e2e)', () => {
     await app.close()
   })
   it('should return 200 on success', async () => {
-    const token = await createAndAuthenticateUser(app)
+    const { token } = await createAndAuthenticateUser(app)
     const user = await prisma.user.findFirstOrThrow()
 
     const gym = await prisma.gym.create({

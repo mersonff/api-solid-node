@@ -12,7 +12,7 @@ describe('Create Check-In (e2e)', () => {
     await app.close()
   })
   it('should return 201 on success', async () => {
-    const token = await createAndAuthenticateUser(app)
+    const { token } = await createAndAuthenticateUser(app)
 
     const gym = await prisma.gym.create({
       data: {
